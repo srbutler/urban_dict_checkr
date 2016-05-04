@@ -39,7 +39,27 @@ def get_ud_def(word):
 
 def chunk_text(input_text):
 
-    return input_text.split(' ')
+    import string
+
+    exclude = set(string.punctuation)
+
+    depuncted_text = ''.join(ch.lower() for ch in input_text if ch not in exclude) 
+
+    text_list = depuncted_text.split()
+
+    candidates = []
+
+    for i in range(len(text_list)-3):
+        # get candidate phrases up to 3 words away (totally arbitrary length)
+        indiv_candidates = [' '.join(text_list[i:i+n]) for n in range(4)]
+
+        # get rid of empties (not sure why there are any, but this clears them out)
+        indiv_candidates = [x for x in indiv_candidates if x!='']
+
+        candidates.extend(indiv_candidates)
+
+    # print(len(candidates))
+    return set(candidates)
 
 
 def format_return(input_text):
