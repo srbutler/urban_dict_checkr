@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
     <body>
         <h1>Text Check</h1>
-        <h2>(it has been investigated)</h2>
-        <p><b>Input:</b><br> {{ input_text }}</p>
-        <p>{{ formatted_input }}</p>
+        <h3>(it has been investigated)</h3>
+
+        <p><b>Input:</b> <br> {{ input_text }}</p>
+
+        <p><b>Watch Out For:</b></p>
+
+        {% for word in word_defs %}
+
+        <p><b>{{ word }}</b>: {{ word_defs[word] }}</p>
+
+        {% endfor %}
     </body>
 </html>
