@@ -24,12 +24,19 @@
                 <h2 class="section_title">Watch Out For:</h2>
 
                 {% for word in word_defs %}
-          
+                
                 <p class="word_def"><b>{{ word }}</b>: {{ word_defs[word] }}</p>
 
                 {% endfor %}
             </div>
-            
+            <footer>
+                <br /><br /><br />
+                <p>Website and content by <a href="mailto:srbutler@gmail.com">Steven Butler</a>
+                    and <a href="mailto:lovering810@gmail.com">Rebecca Lovering</a>.<br />
+                    Built with contempt using Flask and Python.<br />
+                    This site is in no way affiliated with or endoresed by
+                    <a href="https://www.urbandictionary.com">Urban Dictionary</a></p>
+            </footer>
         </div>
     </body>
 </html>

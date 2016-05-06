@@ -26,7 +26,7 @@ def get_ud_def(word):
     words = tree.xpath('//a[@class="word"]/text()')
     meanings = tree.xpath('//div[@class="meaning"]/text()')
     ranks = tree.xpath('//div[@class="ribbon"]/text()')
-    
+
     top_def = None
 
     for tup in zip(words, meanings, ranks):
