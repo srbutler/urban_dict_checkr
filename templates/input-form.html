@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>UD Checkr</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='stylesheets/style.css') }}" />
     </head>
     <body>
-        <h1>Enter some text</h1>
-        <h2>(it will be investigated)</h2>
-        <form action="." method="POST">
-            <input type="text" name="text" class="textinput">
-            <input type="submit" name="my-form" value="Send">
-        </form>
+        <div class="centered">
+            <h1 class="main_title">UD Checkr</h1>
+
+            <div class="input_explanation">
+                <h2 class="section_title">Enter some text</h2>
+                <p>Your input text will be investigated for failures of phrasing.</p>
+            </div>
+            
+            <div class="input_area">
+                <form action="/output" method="POST" id="input_form">
+                    {{ form.text_input.label }} {{ form.text_input(cols="65", rows="15") }} <br />
+                    <!-- <input type="text" name="text" class="textinput"> -->
+                    <input type="submit" name="form_button" value="Check">
+                </form>
+            </div>
+            
+        </div>
+        <footer>
+            <br /><br /><br />
+            <p>Website and content by <a href="mailto:srbutler@gmail.com">Steven Butler</a>
+                and <a href="mailto:lovering810@gmail.com">Rebecca Lovering</a>.<br />
+                Built with contempt using Flask and Python.<br />
+                This site is in no way affiliated with or endoresed by
+                <a href="https://www.urbandictionary.com">Urban Dictionary</a></p>
+        </footer>
     </body>
 </html>
 

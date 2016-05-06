@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>UD Checkr</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='stylesheets/style.css') }}" />
     </head>
     <body>
-        <h1>Text Check</h1>
-        <h3>(it has been investigated)</h3>
 
-        <p><b>Input:</b> <br> {{ input_text }}</p>
+        <div class="centered">
+            
+            <h1 class="main_title">UD Checkr</h1>
 
-        <p><b>Watch Out For:</b></p>
+            <div id="user_input">
+                <h2 class="section_title">Text Check</h2>
+                <p>Your input text has been probed for dangerous phrasings. They
+                    have been printed below for your humble consideration and
+                    excision. Be careful.</p>
 
-        {% for word in word_defs %}
+                <h2 class="section_title">Input:</h2>
+                <p>{{ input_text }}</p>
+            </div>
 
-        <p><b>{{ word }}</b>: {{ word_defs[word] }}</p>
+            <div id="ud_output">
+                <h2 class="section_title">Watch Out For:</h2>
 
-        {% endfor %}
+                {% for word in word_defs %}
+          
+                <p class="word_def"><b>{{ word }}</b>: {{ word_defs[word] }}</p>
+
+                {% endfor %}
+            </div>
+            
+        </div>
     </body>
 </html>
